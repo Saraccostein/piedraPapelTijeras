@@ -7,6 +7,7 @@ rock_input.addEventListener("click", choose_rock);
 function choose_rock() {
     player_choice = 'rock';
     console.log(player_choice);
+
 }
 
 // 📄 Paper event

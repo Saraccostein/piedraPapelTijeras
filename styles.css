@@ -1,5 +1,6 @@
 :root
 {
+
     /*  Colors */
     --black:    #0C0C0F;  
     --gray:     #1E1E26;
@@ -30,6 +31,24 @@ img
     vertical-align: middle;
     text-align: center;
     padding-top: 0.5rem;
+}
+.card
+{
+    background-color: var(--gray);
+    border-radius: 0.5rem;
+    width: 15rem;
+    height: 21rem;
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 4rem;
+}
+#player_card
+{
+    margin-right: var(--between);
+}
+#bot_card
+{
+    margin-left: var(--between);
 }
 .selection_block
 {
