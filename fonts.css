@@ -1,0 +1,29 @@
+/* Pilowlava */
+@font-face 
+{
+  font-family: 'Pilowlava';
+  src: url('fonts/Pilowlava-Regular.woff2') format('woff2'),
+    url('fonts/Pilowlava-Regular.woff') format('woff');
+  font-style: normal;
+  font-weight: normal;
+}
+
+/* Basteleur Moonlight */
+@font-face 
+{
+  font-family: 'Basteleur';
+  src: url('fonts/Basteleur-Moonlight.woff2') format('woff2'),
+    url('fonts/Basteleur-Moonlight.woff') format('woff');
+  font-style: normal;
+  font-weight: normal;
+}
+
+/* Basteleur Bold */
+@font-face 
+{
+  font-family: 'Basteleur';
+  src: url('fonts/Basteleur-Bold.woff2') format('woff2'),
+    url('fonts/Basteleur-Bold.woff') format('woff');
+  font-style: bold;
+  font-weight: 600;
+}
