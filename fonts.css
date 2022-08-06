@@ -24,6 +24,6 @@
   font-family: 'Basteleur';
   src: url('fonts/Basteleur-Bold.woff2') format('woff2'),
     url('fonts/Basteleur-Bold.woff') format('woff');
-  font-style: bold;
+  font-style: normal;
   font-weight: 600;
 }
