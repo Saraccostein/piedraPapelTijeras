@@ -31,13 +31,12 @@ img
     vertical-align: middle;
     text-align: center;
     padding-top: 0.5rem;
+    pointer-events: none;
 }
 .card_img
 {
-    width: 8rem;
     vertical-align: middle;
     text-align: center;
-    padding-top: 2rem;
 }
 .card
 {
@@ -51,7 +50,7 @@ img
 }
 .choose_text
 {
-    font-size: 2rem;
+    font-size: 2.3rem;
     font-weight: bold;
     margin-top: 4rem;
     display: block;
