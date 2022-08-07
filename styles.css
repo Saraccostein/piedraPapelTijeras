@@ -32,6 +32,13 @@ img
     text-align: center;
     padding-top: 0.5rem;
 }
+.card_img
+{
+    width: 8rem;
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 6rem;
+}
 .card
 {
     background-color: var(--gray);
