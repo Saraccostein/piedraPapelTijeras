@@ -37,7 +37,7 @@ img
     width: 8rem;
     vertical-align: middle;
     text-align: center;
-    padding-top: 6rem;
+    padding-top: 2rem;
 }
 .card
 {
@@ -48,6 +48,13 @@ img
     display: inline-block;
     vertical-align: middle;
     margin-bottom: 4rem;
+}
+.choose_text
+{
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 4rem;
+    display: block;
 }
 #player_card
 {
