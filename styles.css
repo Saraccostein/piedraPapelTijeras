@@ -5,7 +5,7 @@
     --black:    #0C0C0F;  
     --gray:     #1E1E26;
     --white:    #d6e7fe;
-    --red:      #FF5680;
+    --red:      #FF6180;
     --green:    #76FF9F;
     --blue:     #0D5FFF;
     --lightblue:#00A2FF;
@@ -13,8 +13,9 @@
     --purple:   #F92672; 
 
     /*  Distances */
-    --quadrate: 5rem;
-    --between:  1rem;
+    --quadrate:   5rem;
+    --between:    1rem;
+    --next_to_vs: 1.8rem;
  
 }
 body
@@ -22,7 +23,7 @@ body
     background-color: var(--black);
     color: var(--white);
     text-align: center;
-    margin-top: 13rem;
+    margin-top: 10rem;
     font-family: 'Basteleur';
 }
 img
@@ -33,6 +34,23 @@ img
     padding-top: 0.5rem;
     pointer-events: none;
 }
+.who_plays {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+}
+.icon {
+    width: 5.8rem;
+}
+#vs {
+    text-align: center;
+    vertical-align:bottom;
+    font-family: 'Pilowlava';
+    font-size: 3.8rem;
+    color: var(--red);
+    margin-left: var(--next_to_vs);
+    margin-right: var(--next_to_vs);
+}
 .card_img
 {
     vertical-align: middle;
@@ -41,12 +59,13 @@ img
 .card
 {
     background-color: var(--gray);
-    border-radius: 0.5rem;
+    border-radius: 0.7rem;
     width: 15rem;
     height: 21rem;
     display: inline-block;
     vertical-align: middle;
-    margin-bottom: 4rem;
+    margin-bottom: 3.4rem;
+    margin-top: 2.9rem;
 }
 .choose_text
 {
@@ -66,7 +85,7 @@ img
 .selection_block
 {
     background-color: var(--gray);
-    border-radius: 10%;
+    border-radius: 1rem;
     height: var(--quadrate);
     width: var(--quadrate);
     display: inline-block;

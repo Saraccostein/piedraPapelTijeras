@@ -19,34 +19,49 @@
 <body>
 
     <div>
+
+        <span class="who_plays" id="player_icon"> <!-- 🧒🏻 -->
+            <img class="icon" src="assets/human.svg" type="img/svg">
+        </span>
+
+        <span id="vs">vs.</span>
+
+        <span class="who_plays" id="bot_icon">    <!-- 🤖 -->
+            <img class="icon" src="assets/robot.svg" type="img/svg">
+        </span>
+
+    </div>
+
+    <div>
         
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <div class="card" id="player_card"> <!-- 🧒🏻🎴 -->
 
-        <div class="card" id="player_card"> <!-- 🧒🏻 -->
-            <span class="choose_text" id="player_text">
-
-            </span class="choose_text" id="bot_text">
+            <span class="choose_text" id="player_text"></span>
             <img class="card_img" id="player_card_img" src="">
+
         </div>
 
-        <div class="card" id="bot_card">   <!-- 🤖 -->
+        <div class="card" id="bot_card">   <!-- 🤖🎴 -->
+
+            <span class="choose_text" id="bot_text"></span>
             <img class="card_img" id="bot_card_img" src="">
+
         </div>
 
     </div>
 
     <div>
 
-        <span class="selection_block" id="rock_button" type="img/svg" draggable="false">     <!-- 🪨 --> 
-            <img src="assets/rock.svg">
+        <span class="selection_block" id="rock_button" draggable="false">     <!-- 🪨 --> 
+            <img src="assets/rock.svg" type="img/svg">
         </span>
 
-        <span class="selection_block" id="paper_button" type="img/svg" draggable="false">    <!-- 📄 -->
-            <img src="assets/paper.svg">
+        <span class="selection_block" id="paper_button" draggable="false">    <!-- 📄 -->
+            <img src="assets/paper.svg" type="img/svg">
         </span>
 
-        <span class="selection_block" id="scissors_button" type="img/svg" draggable="false"> <!-- ✂️ -->
-            <img src="assets/scissors.svg">
+        <span class="selection_block" id="scissors_button" draggable="false"> <!-- ✂️ -->
+            <img src="assets/scissors.svg" type="img/svg">
         </span>
 
     </div>
