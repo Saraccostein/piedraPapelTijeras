@@ -2,16 +2,16 @@
 <html>
 <head>
 
-    <meta charset="UTF-8">
-    <meta author="Marco Saracco">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta author="Marco Saracco" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="preconnect"    href="https://api.fonts.coollabs.io" crossorigin>
-    <link rel="shortcut icon" href="assets/dice.svg"               type="img/svg">
-    <link rel="stylesheet"    href="styles.css"                    type="text/css">
-    <link rel="stylesheet"    href="fonts.css"                     type="text/css">
-    <link rel="stylesheet"    href="https://fontlibrary.org//face/rondure" type="text/css" media="screen"/>
+    <link rel="preconnect"    href="https://api.fonts.coollabs.io"         crossorigin     />
+    <link rel="shortcut icon" href="assets/dice.svg"                       type="img/svg"  />
+    <link rel="stylesheet"    href="styles.css"                            type="text/css" />
+    <link rel="stylesheet"    href="fonts.css"                             type="text/css" />
+    <link rel="stylesheet"    href="https://fontlibrary.org//face/rondure" type="text/css" media="screen" />
 
     <title>Juego</title>
 
@@ -21,13 +21,13 @@
     <div>
 
         <span class="who_plays" id="player_icon"> <!-- 🧒🏻 -->
-            <img class="icon" src="assets/human.svg" type="img/svg">
+            <img class="icon" src="assets/human.svg" type="img/svg" />
         </span>
 
         <span id="vs">vs.</span>
 
         <span class="who_plays" id="bot_icon">    <!-- 🤖 -->
-            <img class="icon" src="assets/robot.svg" type="img/svg">
+            <img class="icon" src="assets/robot.svg" type="img/svg" />
         </span>
 
     </div>
@@ -37,14 +37,14 @@
         <div class="card" id="player_card"> <!-- 🧒🏻🎴 -->
 
             <span class="choose_text" id="player_text"></span>
-            <img class="card_img" id="player_card_img" src="">
+            <img  class="card_img"    id="player_card_img" src="" />
 
         </div>
 
         <div class="card" id="bot_card">   <!-- 🤖🎴 -->
 
             <span class="choose_text" id="bot_text"></span>
-            <img class="card_img" id="bot_card_img" src="">
+            <img  class="card_img"    id="bot_card_img" src="" />
 
         </div>
 
@@ -52,17 +52,17 @@
 
     <div>
 
-        <span class="selection_block" id="rock_button" draggable="false">     <!-- 🪨 --> 
-            <img src="assets/rock.svg" type="img/svg">
-        </span>
+        <div class="selection_block" id="rock_button" draggable="false">     <!-- 🪨⏹ --> 
+            <img src="assets/rock.svg" type="img/svg" />
+        </div>
 
-        <span class="selection_block" id="paper_button" draggable="false">    <!-- 📄 -->
-            <img src="assets/paper.svg" type="img/svg">
-        </span>
+        <div class="selection_block" id="paper_button" draggable="false">    <!-- 📄⏹ -->
+            <img src="assets/paper.svg" type="img/svg" />
+        </div>
 
-        <span class="selection_block" id="scissors_button" draggable="false"> <!-- ✂️ -->
-            <img src="assets/scissors.svg" type="img/svg">
-        </span>
+        <div class="selection_block" id="scissors_button" draggable="false"> <!-- ✂️⏹ -->
+            <img src="assets/scissors.svg" type="img/svg" />
+        </div>
 
     </div>
 
