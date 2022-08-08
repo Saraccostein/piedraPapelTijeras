@@ -87,6 +87,8 @@ img
     width: var(--quadrate);
     display: inline-block;
     vertical-align: middle;
+    -webkit-user-select: none;
+    user-select: none;
 }
 .selection_block:hover
 {

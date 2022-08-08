@@ -1,4 +1,11 @@
+function empty() {
+    player_text.innerHTML             = '';
+    player_img.src                    = '';
+    player_card.style.backgroundColor = black;
+}
+
 // 🎨 Colors
+const black      = '#1E1E26';
 const dark_gray  = '#323232';
 const gray       = '#EBE6E6';
 const light_gray = '#D2DDF7';
@@ -16,7 +23,9 @@ let player_img  = document.getElementById('player_card_img');
 
 // 🪨 Rock
 let rock_input = document.getElementById("rock_button");
-rock_input.addEventListener("click", choose_rock, bot_choose_card);
+
+rock_input.addEventListener("click", choose_rock);
+rock_input.addEventListener("click", bot_choose_card);
 
 function choose_rock() {
     player_choice = 'rock';
@@ -32,7 +41,8 @@ function choose_rock() {
 
 // 📄 Paper
 let paper_input = document.getElementById("paper_button");
-paper_input.addEventListener("click", choose_paper, bot_choose_card);
+paper_input.addEventListener("click", choose_paper);
+paper_input.addEventListener("click", bot_choose_card);
 
 function choose_paper() {
     player_choice = 'paper';
@@ -48,7 +58,9 @@ function choose_paper() {
  
 // ✂️ Scissors
 let scissors_input = document.getElementById("scissors_button");
-scissors_input.addEventListener("click", choose_scissors, bot_choose_card);
+scissors_input.addEventListener("click", choose_scissors);
+scissors_input.addEventListener("click", bot_choose_card);
+
 
 function choose_scissors() {
     player_choice = 'scissors';
@@ -72,10 +84,9 @@ let bot_img  = document.getElementById('bot_card_img');
 
 function bot_choose_card() {
     let bot = Math.floor(Math.random() * (3 - 1 + 1) + 1);
-    console.log(bot);
 
     if (bot == 1) {
-        bot_choice = 'piedra';
+        bot_choice = 'rock';
 
         // 🪨🎴 Rock Card
         bot_text.innerHTML             = 'Piedra';
@@ -108,3 +119,7 @@ function bot_choose_card() {
         bot_img.style.marginTop        = '1.3rem';
     }
 }
+
+// Player message
+
+
