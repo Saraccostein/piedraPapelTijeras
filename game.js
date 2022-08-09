@@ -49,8 +49,7 @@ paper_input.addEventListener("click", choose_paper);
 paper_input.addEventListener("click", bot_choose_card);
 
 function choose_paper() {
-    player_choice = 'paper';
-
+    
     // 📄🎴 Paper Card
     player_text.innerHTML             = 'Papel';
     player_img.src                    = 'assets/paper.svg';
@@ -58,6 +57,10 @@ function choose_paper() {
     player_text.style.color           = white;
     player_img.style.width            = '10rem';
     player_img.style.marginTop        = '1rem';
+
+    player_choice = 'paper';
+    bot_choose_card();
+    battle();
 }
  
 // ✂️ Scissors
@@ -67,8 +70,7 @@ scissors_input.addEventListener("click", bot_choose_card);
 
 
 function choose_scissors() {
-    player_choice = 'scissors';
-
+    
     // ✂️🎴 Scissors Card;
     player_text.innerHTML             = 'Tijera';
     player_img.src                    = 'assets/light_scissors.svg';
@@ -76,6 +78,9 @@ function choose_scissors() {
     player_text.style.color           = light_gray;
     player_img.style.width            = '9rem';
     player_img.style.marginTop        = '1.3rem';
+
+    player_choice = 'scissors';
+    bot_choose_card();
 }
 
 
@@ -90,7 +95,6 @@ function bot_choose_card() {
     let bot = Math.floor(Math.random() * (3 - 1 + 1) + 1);
 
     if (bot == 1) {
-        bot_choice = 'rock';
 
         // 🪨🎴 Rock Card
         bot_text.innerHTML             = 'Piedra';
@@ -100,8 +104,9 @@ function bot_choose_card() {
         bot_img.style.width            = '10rem';
         bot_img.style.marginTop        = '1rem';
 
+        bot_choice = 'rock';
+
     } else if (bot == 2) {
-        bot_choice = 'paper';
 
         // 📄🎴 Paper Card
         bot_text.innerHTML             = 'Papel';
@@ -111,8 +116,9 @@ function bot_choose_card() {
         bot_img.style.width            = '10rem';
         bot_img.style.marginTop        = '1rem';
 
+        bot_choice = 'paper';
+
     } else if (bot == 3) {
-        bot_choice = 'scissors';
 
         // ✂️🎴 Scissors Card;
         bot_text.innerHTML             = 'Tijera';
@@ -121,29 +127,56 @@ function bot_choose_card() {
         bot_text.style.color           = light_gray;
         bot_img.style.width            = '9rem';
         bot_img.style.marginTop        = '1.3rem';
+
+        bot_choice = 'scissors';
+    }
+
+    if (player_choice == bot_choice) {
+        tie();
+
+    } else if (player_choice == 'rock' && bot_choice == 'scissors') {
+        player_wins();
+
+    } else if (player_choice == 'paper' && bot_choice == 'rock') {
+        player_wins();
+
+    } else if (player_choice == 'scissors' && bot_choice == 'paper') {
+        player_wins();
+
+    } else {
+        bot_wins();
+        
     }
 }
 
-// Player message
+// 💬 Tooltip
+let player_tooltip = document.getElementById('player_tooltip');
+let bot_tooltip    = document.getElementById('bot_tooltip');
 
-let player_tooltip = document.getElementById('player_tooltip')
+function player_wins() {
+    player_tooltip.style.backgroundColor = black;
+    player_tooltip.innerHTML = '¡Gané!';
+    player_tooltip.style.color = light_gray;
 
-function battle() {
-    if (player_choice == bot_choice) {
+    bot_tooltip.style.backgroundColor = night;
+    bot_tooltip.style.color = night;
+}
 
-        player_tooltip.style.backgroundColor = black;
-        player_tooltip.innerHTML = 'Es un empate';
+function bot_wins() {
+    bot_tooltip.style.backgroundColor = black;
+    bot_tooltip.innerHTML = '¡Gané!';
+    bot_tooltip.style.color = light_gray;
 
-        bot_tooltip.style.backgroundColor = black;
-        bot_tooltip.innerHTML = 'Es un empate';
+    player_tooltip.style.backgroundColor = night;
+    player_tooltip.style.color = night;
+}
 
-    } else if (player_choice == 'rock' && bot_choice == 'paper') {
+function tie() {
+    player_tooltip.style.backgroundColor = black;
+    player_tooltip.innerHTML = 'Empate';
+    player_tooltip.style.color = light_gray;
 
-        player_tooltip.style.backgroundColor = black;
-        player_tooltip.innerHTML = '¡Ganamos!';
-
-        player_card.animate.backgroundColor
-
-        bot_tooltip.style.backgroundColor = night;
-    }
+    bot_tooltip.style.backgroundColor = black;
+    bot_tooltip.innerHTML = 'Empate';
+    bot_tooltip.style.color = light_gray;
 }
