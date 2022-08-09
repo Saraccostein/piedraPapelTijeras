@@ -1,9 +1,3 @@
-function empty() {
-    player_text.innerHTML             = '';
-    player_img.src                    = '';
-    player_card.style.backgroundColor = black;
-}
-
 // 🎨 Colors
 const night      = '#0C0C0F';
 const black      = '#1E1E26';

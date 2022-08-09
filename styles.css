@@ -47,22 +47,21 @@ img
     transition: all 0.2s;
 
 }
-.removed {
-    background: var(--black);
-    color: var(--black);
-}
-.who_plays {
+.who_plays 
+{
     display: inline-block;
     text-align: center;
     vertical-align: middle;
 }
-.icon {
+.icon 
+{
     width: 5.8rem;
     vertical-align: middle;
     position: relative;
     margin-top: 1rem;
 }
-#vs {
+#vs 
+{
     text-align: center;
     vertical-align:bottom;
     font-family: 'Pilowlava';
