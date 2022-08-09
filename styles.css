@@ -12,7 +12,7 @@
     /*  Distances */
     --quadrate:   5rem;
     --between:    1rem;
-    --next_to_vs: 1.8rem;
+    --next_to_vs: -2rem;
  
 }
 body
@@ -20,7 +20,7 @@ body
     background-color: var(--black);
     color: var(--white);
     text-align: center;
-    margin-top: 10rem;
+    margin-top: 8rem;
     font-family: 'Basteleur';
 }
 img
@@ -31,6 +31,36 @@ img
     padding-top: 0.5rem;
     pointer-events: none;
 }
+.tooltip
+{
+    padding: 18px 32px;
+    background: var(--black);
+    position: relative;
+    min-width: 150px;
+    max-width: 180px;
+    border-radius: 0.4rem;
+    text-align: center;
+    line-height: 1.5rem;
+    vertical-align: middle;
+    pointer-events: none;
+    transition: all 2s;
+
+}
+  .tooltip:after {
+    content: "";
+    position: absolute;
+    bottom: -0.5rem;
+    left: 50%;
+    margin-left: -0.5rem;
+    width: 1rem;
+    height: 1rem;
+    background: var(--black);
+    transform: rotate(45deg);
+}
+
+.removed {
+    opacity: 0;
+  }
 .who_plays {
     display: inline-block;
     text-align: center;
@@ -38,6 +68,9 @@ img
 }
 .icon {
     width: 5.8rem;
+    vertical-align: middle;
+    position: relative;
+    margin-top: 1rem;
 }
 #vs {
     text-align: center;
@@ -56,6 +89,7 @@ img
 .card
 {
     background-color: var(--gray);
+    border: 0.1rem solid var(--black);
     border-radius: 0.7rem;
     width: 15rem;
     height: 21rem;
