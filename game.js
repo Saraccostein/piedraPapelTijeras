@@ -12,14 +12,12 @@ const purple     = '#5E4AFF';
 
 // 👦🏻 Player
 let player_choice;
-
 let player_card = document.getElementById('player_card');
 let player_text = document.getElementById('player_text');
 let player_img  = document.getElementById('player_card_img');
 
 // 🪨 Rock
 let rock_input = document.getElementById("rock_button");
-
 rock_input.addEventListener("click", choose_rock);
 
 function choose_rock() {
@@ -34,7 +32,6 @@ function choose_rock() {
 
     player_choice = 'rock';
     bot_choose_card();
-    battle();
 }
 
 // 📄 Paper
@@ -54,7 +51,6 @@ function choose_paper() {
 
     player_choice = 'paper';
     bot_choose_card();
-    battle();
 }
  
 // ✂️ Scissors
@@ -129,16 +125,16 @@ function bot_choose_card() {
         tie();
 
     } else if (player_choice == 'rock' && bot_choice == 'scissors') {
-        player_wins();
+        winner(player_tooltip, bot_tooltip);
 
     } else if (player_choice == 'paper' && bot_choice == 'rock') {
-        player_wins();
+        winner(player_tooltip, bot_tooltip);
 
     } else if (player_choice == 'scissors' && bot_choice == 'paper') {
-        player_wins();
+        winner(player_tooltip, bot_tooltip);
 
     } else {
-        bot_wins();
+        winner(bot_tooltip, player_tooltip);
         
     }
 }
@@ -146,24 +142,6 @@ function bot_choose_card() {
 // 💬 Tooltip
 let player_tooltip = document.getElementById('player_tooltip');
 let bot_tooltip    = document.getElementById('bot_tooltip');
-
-function player_wins() {
-    player_tooltip.style.backgroundColor = black;
-    player_tooltip.innerHTML = '¡Gané!';
-    player_tooltip.style.color = light_gray;
-
-    bot_tooltip.style.backgroundColor = night;
-    bot_tooltip.style.color = night;
-}
-
-function bot_wins() {
-    bot_tooltip.style.backgroundColor = black;
-    bot_tooltip.innerHTML = '¡Gané!';
-    bot_tooltip.style.color = light_gray;
-
-    player_tooltip.style.backgroundColor = night;
-    player_tooltip.style.color = night;
-}
 
 function tie() {
     player_tooltip.style.backgroundColor = black;
@@ -173,4 +151,19 @@ function tie() {
     bot_tooltip.style.backgroundColor = black;
     bot_tooltip.innerHTML = 'Empate';
     bot_tooltip.style.color = light_gray;
+}
+
+function winner(winner_tooltip, loser_tooltip) {
+    winner_tooltip.style.backgroundColor = black;
+    winner_tooltip.innerHTML = '¡Gané!';
+    winner_tooltip.style.color = light_gray;
+
+    loser_tooltip.style.backgroundColor = night;
+    loser_tooltip.style.color = night;
+}
+
+function tooltip_style(whose_tooltip, background_color, message, tipography_color) {
+    whose_tooltip.style.backgroundColor = background_color;
+    whose_tooltip.innerHTML = message;
+    whose_tooltip.style.color = tipography_color;
 }
