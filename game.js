@@ -20,8 +20,34 @@ let player_img  = document.getElementById('player_card_img');
 let rock_input = document.getElementById("rock_button");
 rock_input.addEventListener("click", choose_rock);
 
+// 🧮 Counters
+let botWins = 0;
+let playerWins = 0;
+let tieCounter = 0;
+
+// 📄 Paper
+let paper_input = document.getElementById("paper_button");
+paper_input.addEventListener("click", choose_paper);
+
+// ✂️ Scissors
+let scissors_input = document.getElementById("scissors_button");
+scissors_input.addEventListener("click", choose_scissors);
+
+// 🤖 Bot
+let bot = Math.floor(Math.random() * (3 - 1 + 1) + 1);
+let bot_choice;
+
+let bot_card = document.getElementById('bot_card');
+let bot_text = document.getElementById('bot_text');
+let bot_img  = document.getElementById('bot_card_img');
+
+// 💬 Tooltip
+let player_tooltip = document.getElementById('player_tooltip');
+let bot_tooltip    = document.getElementById('bot_tooltip');
+
+//while(playerWins < 3 && botWins < 3) {
 function choose_rock() {
-    
+
     // 🪨🎴 Rock Card
     player_text.innerHTML             = 'Piedra';
     player_img.src                    = 'assets/rock.svg';
@@ -33,11 +59,6 @@ function choose_rock() {
     player_choice = 'rock';
     bot_choose_card();
 }
-
-// 📄 Paper
-let paper_input = document.getElementById("paper_button");
-paper_input.addEventListener("click", choose_paper);
-paper_input.addEventListener("click", bot_choose_card);
 
 function choose_paper() {
     
@@ -52,12 +73,6 @@ function choose_paper() {
     player_choice = 'paper';
     bot_choose_card();
 }
- 
-// ✂️ Scissors
-let scissors_input = document.getElementById("scissors_button");
-scissors_input.addEventListener("click", choose_scissors);
-scissors_input.addEventListener("click", bot_choose_card);
-
 
 function choose_scissors() {
     
@@ -73,16 +88,7 @@ function choose_scissors() {
     bot_choose_card();
 }
 
-
-// 🤖 Bot
-let bot_choice;
-
-let bot_card = document.getElementById('bot_card');
-let bot_text = document.getElementById('bot_text');
-let bot_img  = document.getElementById('bot_card_img');
-
 function bot_choose_card() {
-    let bot = Math.floor(Math.random() * (3 - 1 + 1) + 1);
 
     if (bot == 1) {
 
@@ -122,26 +128,29 @@ function bot_choose_card() {
     }
 
     if (player_choice == bot_choice) {
+        tieCounter = tieCounter + 1;
         tie();
 
     } else if (player_choice == 'rock' && bot_choice == 'scissors') {
+        playerWins = playerWins + 1;
         winner(player_tooltip, bot_tooltip);
 
     } else if (player_choice == 'paper' && bot_choice == 'rock') {
+        playerWins = playerWins + 1;
         winner(player_tooltip, bot_tooltip);
 
     } else if (player_choice == 'scissors' && bot_choice == 'paper') {
+        playerWins = playerWins + 1;
         winner(player_tooltip, bot_tooltip);
 
     } else {
+        botWins = botWins + 1;
         winner(bot_tooltip, player_tooltip);
         
     }
-}
 
-// 💬 Tooltip
-let player_tooltip = document.getElementById('player_tooltip');
-let bot_tooltip    = document.getElementById('bot_tooltip');
+    counter();
+}
 
 function tie() {
     player_tooltip.style.backgroundColor = black;
@@ -154,12 +163,29 @@ function tie() {
 }
 
 function winner(winner_tooltip, loser_tooltip) {
-    winner_tooltip.style.backgroundColor = black;
-    winner_tooltip.innerHTML = '¡Gané!';
-    winner_tooltip.style.color = light_gray;
 
-    loser_tooltip.style.backgroundColor = night;
-    loser_tooltip.style.color = night;
+    if(playerWins !== 3 && botWins !== 3) {
+        winner_tooltip.style.backgroundColor = black;
+        winner_tooltip.innerHTML = '¡Gané!';
+        winner_tooltip.style.color = light_gray;
+
+        loser_tooltip.style.backgroundColor = night;
+        loser_tooltip.style.color = night;
+    
+    } else if (playerWins == 3 || botWins == 3) {
+        winner_tooltip.style.backgroundColor = yellow;
+        winner_tooltip.innerHTML = '¡Soy el ganador!';
+        winner_tooltip.style.color = dark_gray;
+
+        loser_tooltip.style.backgroundColor = night;
+        loser_tooltip.style.color = night;
+
+        playerWins = 0;
+        botWins = 0;
+    
+    } else if (botWins ) {
+
+    }
 }
 
 function tooltip_style(whose_tooltip, background_color, message, tipography_color) {
@@ -167,3 +193,9 @@ function tooltip_style(whose_tooltip, background_color, message, tipography_colo
     whose_tooltip.innerHTML = message;
     whose_tooltip.style.color = tipography_color;
 }
+
+function counter() {
+console.log('Ganaste ' + playerWins + ' veces.');
+console.log('El robot ganó ' + botWins + ' veces.');
+}
+//}
